@@ -18,15 +18,16 @@ export default function Auth() {
     // TODO
     // call authUser with email, password, type
     try {
-      const newUser = authUser(email, password, type);
+      // if successful
+      const newUser = await authUser(email, password, type);
+      // setUser in context
       setUser(newUser);
+      // redirect to items -- happens through a re-render
+      // which triggers line 15 Redirect
     } catch (e) {
+      // else display error
       console.error(e);
     }
-    // if successful
-    // setUser in context
-    // redirect to items
-    // else display error
   };
 
   return (
