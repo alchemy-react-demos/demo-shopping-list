@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { signOut } from '../services/auth';
-import { UserContext } from '../context/UserContext';
+import { useUser } from '../context/UserContext';
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   // TODO -- replace this user with the user from context
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useUser();
 
   const handleLogout = async () => {
     try {

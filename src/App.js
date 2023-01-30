@@ -4,11 +4,10 @@ import Auth from './components/Auth/Auth';
 import Header from './components/Header';
 import Items from './components/Items/Items';
 import backgroundImage from './supermarket.jpeg';
-import { useContext } from 'react';
-import { UserContext } from './context/UserContext';
+import { useUser } from './context/UserContext';
 
 function App() {
-  const { user } = useContext(UserContext);
+  const { user } = useUser();
   return (
     <div className="App" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <Header />
